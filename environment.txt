@@ -1,5 +1,5 @@
 dependencies:
- - python=3.5
+ - python=3.7
  - numpy
  - scipy
  - scikit-learn
@@ -10,8 +10,5 @@ dependencies:
  - click
  - openpyxl
  - pip:
-   - watermark
    - pytest
-   - flask-restful
    - scikit-plot
-   - nose
