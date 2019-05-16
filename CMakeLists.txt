@@ -22,7 +22,7 @@ ADD_CUSTOM_TARGET(rawdata ALL DEPENDS ${IRIS_FILE})
 #     DEPENDS rawdata
 #     )
 # ADD_CUSTOM_TARGET(preprocess DEPENDS rawdata)
-# # Additional files to clean 
+# # Additional files to clean
 # set_property(DIRECTORY PROPERTY ADDITIONAL_MAKE_CLEAN_FILES
 #     ${CMAKE_CURRENT_SOURCE_DIR}/data/processed/processed.xlsx
 #     )
@@ -35,7 +35,7 @@ ADD_CUSTOM_COMMAND(OUTPUT ${PROCESSED_FILE}
     COMMAND python src/data/preprocess.py ${IRIS_FILE} data/processed/processed.pickle --excel data/processed/processed.xlsx
     COMMAND ${CMAKE_COMMAND} -E echo "Done. Checkout ${PROCESSED_FILE}."
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    DEPENDS rawdata ${IRIS_FILE}
+    DEPENDS rawdata ${IRIS_FILE} src/data/preprocess.py
     )
 ADD_CUSTOM_TARGET(preprocess DEPENDS ${PROCESSED_FILE})
 
