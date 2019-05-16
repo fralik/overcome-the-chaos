@@ -13,3 +13,10 @@ dependencies:
   - click
   - openpyxl
   - scikit-plot
+  - pip
+  - pip:
+    - pynt
+    - pynt-contrib
+    - paver
+  - luigi
+  - path.py

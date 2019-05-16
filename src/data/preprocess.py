@@ -33,15 +33,15 @@ def read_processed_data(fname='data/processed/processed.pickle'):
 def main(input_file, output_file, excel):
     pypreprocess(input_file, output_file, excel)
 
-def pypreprocess(input_file, output_file, excel):
+def pypreprocess(input_file, output_file, excel_file=None):
     print('Preprocessing data')
 
     dframe = read_raw_data(input_file)
     dframe = preprocess_data(dframe)
 
     dframe.to_pickle(output_file)
-    if excel is not None:
-        dframe.to_excel(excel)
+    if excel_file is not None:
+        dframe.to_excel(excel_file)
 
 
 if __name__ == '__main__':
