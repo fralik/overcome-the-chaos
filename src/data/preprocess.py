@@ -31,6 +31,9 @@ def read_processed_data(fname='data/processed/processed.pickle'):
 @click.argument('output_file', type=click.Path(writable=True, dir_okay=False))
 @click.option('--excel', type=click.Path(writable=True, dir_okay=False))
 def main(input_file, output_file, excel):
+    pypreprocess(input_file, output_file, excel)
+
+def pypreprocess(input_file, output_file, excel):
     print('Preprocessing data')
 
     dframe = read_raw_data(input_file)
