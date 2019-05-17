@@ -19,6 +19,9 @@ def exploratory_visualization(dframe):
 @click.argument('input_file', type=click.Path(exists=True, dir_okay=False))
 @click.argument('output_file', type=click.Path(writable=True, dir_okay=False))
 def main(input_file, output_file):
+    pyexploratory(input_file, output_file)
+
+def pyexploratory(input_file, output_file):
     print('Plotting pairwise distribution...')
 
     dframe = read_processed_data(input_file)

@@ -43,6 +43,17 @@ def pypreprocess(input_file, output_file, excel_file=None):
     if excel_file is not None:
         dframe.to_excel(excel_file)
 
+def doit_pypreprocess(input_file, targets):
+    excel_file = None
+    output_file = None
+    # targets can be a one element or two elements set
+    for fi in targets:
+        if ".pickle" in fi:
+            output_file = fi
+        else:
+            excel_file = fi
+    pypreprocess(input_file, output_file, excel_file)
+    return {'processed': output_file, 'excel': excel_file}
 
 if __name__ == '__main__':
     main()

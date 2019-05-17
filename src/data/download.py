@@ -13,5 +13,13 @@ def pydownload_file(url, filename):
     with open(filename,  'wb') as ofile:
         ofile.write(response.content)
 
+def doit_download_file(url, targets):
+    # targets is a set, let's take the last element
+    filename = targets.pop()
+    pydownload_file(url, filename)
+
+    # return a dictionary, so that other tasks in doit can use it.
+    return {'filename': filename}
+
 if __name__ == '__main__':
     download_file()
