@@ -10,9 +10,11 @@ import glob
 
 from src.data.download import pydownload_file
 from src.data.preprocess import pypreprocess
+from src.visualization.exploratory import pyexploratory
 
 iris_file = 'data/raw/iris.csv'
 processed_file = 'data/processed/processed.pickle'
+graph_file = 'reports/figures/exploratory.png'
 
 @task()
 def rawdata():
@@ -32,3 +34,8 @@ def clean():
 def preprocess():
     '''Preprocess IRIS dataset'''
     pypreprocess(iris_file, processed_file)
+
+@task(preprocess)
+def exploratory():
+    '''Make an image with pairwise distribution'''
+    pyexploratory(processed_file, graph_file)
