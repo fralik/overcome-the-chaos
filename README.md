@@ -3,7 +3,7 @@
 ## Information about this fork
 
 This is a very simple project to show diffirent build systems applied to
-a python project with focus on machine learning. It is a fort of
+a python project with focus on machine learning. It is a fork of
 [https://github.com/artofai/overcome-the-chaos](https://github.com/artofai/overcome-the-chaos).
 Differences between build systems are highlighted in the [blog post](https://habr.com/en/post/451962/).
 
