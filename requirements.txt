@@ -12,3 +12,9 @@ watermark
 engarde
 scikit-plot
 tqdm
+pynt
+pynt-contrib
+paver
+luigi
+path.py
+doit
